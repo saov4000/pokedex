@@ -43,26 +43,23 @@ pokeAPI.getPokemonDetails = (pokemon)=>{
     .then(convertPokeAPIdetailToPokemon)
 }
 
-pokeAPI.getPokemonDetails2 = (pokemon)=>{
+/*pokeAPI.getPokemonDetails2 = (pokemon)=>{
     return fetch(pokemon)
     .then((response)=>response.json())
     .then(convertPokeAPIdetailToPokemon2)
-}
+}*/
 
-pokeAPI.getPokemonDetailsPage = (pokemon)=>{
+/*pokeAPI.getPokemonDetailsPage = (pokemon)=>{
     return fetch(pokemon.url)
     .then((response)=>response.json())
     .then(convertToDetails)
-}
+}*/
 
 pokeAPI.getOnePokemon = (id) =>{
     const url = `https://pokeapi.co/api/v2/pokemon/${id}/`
     return fetch(url)
     .then((response)=> response.json())
-    //.then((res)=>console.log("teste "+res.id))
     .then((jsonBody)=> jsonBody)
-    //.then((pokemon)=>pokemon.map(pokeAPI.convertPokeAPIdetailToPokemon2))
-    //.then((detailRequests) => Promise.all(detailRequests))
     .then((pokemonsDetails)=> pokemonsDetails)
 }
 

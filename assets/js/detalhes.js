@@ -14,7 +14,7 @@ function headerParaHTML(pokemon){
                             </ol>
                         </div>
                         <div class="right">
-                            <span id="ident">#0${pokemon.id}</span>
+                            <span id="ident">#${pokemon.id}</span>
                         </div>
                     </div>
                 </div>
@@ -40,10 +40,6 @@ function loadHeader(num){
 function loadDetalhes(num){
     pokeAPI.getDetails(num)
     .then((lista = [])=>{
-        /*for(let i=0;i<lista.length;i++){
-            const item = lista[i]
-            document.getElementById('dados').innerHTML += detalhesParaHTML(item)
-        } */
         document.getElementById('dados').innerHTML = lista.map(detalhesParaHTML).join('')
     })
 }
@@ -51,10 +47,3 @@ function loadDetalhes(num){
 loadHeader(num)
 loadDetalhes(num)
 
-function cor(valor){
-    if(valor >= 50){
-        document.querySelector('.cor').style.backgroudColor = 'green' 
-    }else{
-        document.querySelector('.cor').style.backgroudColor = 'red' 
-    }
-}
